@@ -1,8 +1,8 @@
 :root {
     --primary-color: #ffd700;
-    --secondary-color: #333;
+    --secondary-color: hsl(0, 0%, 20%);
     --text-color: #ffffff;
-    --background-color:var(--primary-color);
+    background-color: rgba(10, 18, 18, 0.9);
 }
 
 * {
@@ -13,7 +13,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
+    background-color: rgba(180, 100, 180, 0.9);
     color: var(--text-color);
     line-height: 1.6;
 }
@@ -24,7 +24,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: rgba(18, 18, 18, 0.9);
+    background-color: rgba(180, 18, 18, 0.9);
     position: fixed;
     width: 100%;
     top: 0;
@@ -64,7 +64,7 @@ nav {
     justify-content:space-around;
     height: 80vh;
     padding: 0 10%;
-    background-color: var(--background-color);
+    background-color: rgba(180, 180, 18, 0.9);
     margin-top: 60px;
 }
 
@@ -142,8 +142,8 @@ nav {
 /* About Section */
 .about {
     padding: 5rem 10%;
-    background-color: #1e1e1e;
-    color: #00ffff;
+    background-color:#ffffff;
+    color: #121212;
 }
 
 .about-details {
@@ -155,6 +155,13 @@ nav {
 .about-image img {
     max-width: 300px;
     border-radius: 10px;
+}
+
+/* Make About section paragraph larger for readability */
+.about-text p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #222;
 }
 
 .skills {
@@ -489,3 +496,4 @@ body {
 .github-link{
     color:#0088ff
 }
+.
