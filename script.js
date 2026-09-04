@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Typing Animation
     const typingElement = document.querySelector('.typing-animation');
-    const roles = ['Computer Engineer', 'Programmer', 'AI/ML Enthusiast','Web Developer'];
+    const roles = ['Computer Engineer', 'Web Developer', 'AI/ML Enthusiast','Programmer'];
     let currentRoleIndex = 0;
     let currentCharIndex = 0;
     let isDeleting = false;
