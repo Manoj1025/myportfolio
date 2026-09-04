@@ -173,13 +173,13 @@ nav {
 }
 
 .skill-bar {
-    background-color: #00FF00;
+    background-color: red;
     height: 10px;
     border-radius: 5px;
 }
 
 .skill-level {
-    background-color: 00FF00;
+    background-color: blue;
     height: 100%;
     border-radius: 5px;
     
