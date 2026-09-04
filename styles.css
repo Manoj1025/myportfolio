@@ -157,11 +157,11 @@ nav {
     border-radius: 10px;
 }
 
-/* Make About section paragraph larger for readability */
+
 .about-text p {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #222;
+    color: #FF5733;
 }
 
 .skills {
