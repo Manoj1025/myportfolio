@@ -185,30 +185,6 @@ nav {
     
 }
 
-/* Resume Section */
-.resume {
-    padding: 5rem 10%;
-    text-align: center;
-    color:green;
-}
-
-.resume-content {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-    color:yellow;
-    
-    
-    
-}
-
-.resume-item {
-    background-color:#2c3e50;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 40%;
-    font-weight: bold;
-}
 
 /* Projects Section */
 .projects {
@@ -498,325 +474,362 @@ body {
 }
 
 .
-/*--------------------------------------------------------------
-# Resume Section
---------------------------------------------------------------*/
+/* =========================================================
+   RESUME SECTION
+   ========================================================= */
 
-.resume {
-  padding: 80px 0;
+.resume-section {
+    width: 100%;
+    padding: 90px 0;
+    background: #151515;
+    color: #ffffff;
 }
 
-.resume .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-
-/*--------------------------------------------------------------
-# Resume Section Title
---------------------------------------------------------------*/
-
-.resume .section-title {
-  text-align: center;
-  margin-bottom: 45px;
-}
-
-.resume .section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0 0 12px;
-}
-
-.resume .section-title p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: #999;
-  font-size: 15px;
-  line-height: 1.7;
+.resume-container {
+    width: 86%;
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
 
-/*--------------------------------------------------------------
-# Resume Grid
---------------------------------------------------------------*/
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.resume-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.resume-heading span {
+    display: block;
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: #18d26e;
+}
+
+.resume-heading h2 {
+    margin: 0 0 12px;
+
+    font-size: 36px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.resume-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+
+    color: #999999;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESUME GRID
+   ========================================================= */
 
 .resume-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
 }
 
 
-/*--------------------------------------------------------------
-# Resume Card
---------------------------------------------------------------*/
+/* =========================================================
+   RESUME CARD
+   ========================================================= */
 
 .resume-card {
-  display: flex;
-  gap: 22px;
-  padding: 30px;
+    min-width: 0;
 
-  background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #1d1d1d;
 
-  border-radius: 12px;
+    border: 1px solid #2d2d2d;
 
-  transition: all 0.3s ease;
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
 }
 
 .resume-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 
-  border-color: #18d26e;
+    border-color: #18d26e;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 
-/*--------------------------------------------------------------
-# Resume Icon
---------------------------------------------------------------*/
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.resume-card-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
 
 .resume-icon {
-  min-width: 52px;
-  width: 52px;
-  height: 52px;
+    width: 48px;
+    height: 48px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    flex-shrink: 0;
 
-  border-radius: 10px;
+    display: flex;
 
-  background: rgba(24, 210, 110, 0.10);
+    align-items: center;
+    justify-content: center;
 
-  color: #18d26e;
+    border-radius: 10px;
 
-  font-size: 22px;
+    background: rgba(24, 210, 110, 0.10);
+
+    color: #18d26e;
+
+    font-size: 20px;
+}
+
+.resume-category {
+    color: #18d26e;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
 }
 
 
-/*--------------------------------------------------------------
-# Resume Content
---------------------------------------------------------------*/
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
 
-.resume-content {
-  flex: 1;
+.resume-card h3 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
 }
 
-.resume-label {
-  display: inline-block;
+.resume-card h4 {
+    margin: 0 0 15px;
 
-  margin-bottom: 8px;
+    color: #aaaaaa;
 
-  color: #18d26e;
+    font-size: 14px;
 
-  font-size: 12px;
-
-  font-weight: 600;
-
-  letter-spacing: 1.5px;
+    font-weight: 500;
 }
 
-.resume-content h3 {
-  margin: 0 0 7px;
+.resume-card p {
+    margin: 0;
 
-  color: #fff;
+    color: #999999;
 
-  font-size: 20px;
+    font-size: 14px;
 
-  font-weight: 600;
-
-  line-height: 1.4;
-}
-
-.resume-content h4 {
-  margin: 0 0 14px;
-
-  color: #aaa;
-
-  font-size: 15px;
-
-  font-weight: 500;
-}
-
-.resume-content p {
-  margin: 0;
-
-  color: #aaa;
-
-  font-size: 14px;
-
-  line-height: 1.7;
+    line-height: 1.75;
 }
 
 
-/*--------------------------------------------------------------
-# Skills
---------------------------------------------------------------*/
-
-.skills-description {
-  margin-bottom: 15px !important;
-}
+/* =========================================================
+   SKILL TAGS
+   ========================================================= */
 
 .skill-tags {
-  display: flex;
+    display: flex;
 
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 
-  gap: 8px;
+    gap: 8px;
 
-  margin-top: 15px;
+    margin-top: 20px;
 }
 
 .skill-tags span {
-  padding: 7px 12px;
+    display: inline-block;
 
-  border: 1px solid rgba(24, 210, 110, 0.30);
+    padding: 7px 12px;
 
-  border-radius: 20px;
+    background: #252525;
 
-  color: #ccc;
+    border: 1px solid #363636;
 
-  font-size: 12px;
+    border-radius: 20px;
 
-  transition: all 0.3s ease;
+    color: #cccccc;
+
+    font-size: 12px;
+
+    transition: all 0.25s ease;
 }
 
 .skill-tags span:hover {
-  color: #18d26e;
+    color: #18d26e;
 
-  border-color: #18d26e;
+    border-color: #18d26e;
 
-  background: rgba(24, 210, 110, 0.05);
+    background: rgba(24, 210, 110, 0.06);
 }
 
 
-/*--------------------------------------------------------------
-# View Certificate Button
---------------------------------------------------------------*/
+/* =========================================================
+   CERTIFICATE BUTTON
+   ========================================================= */
 
-.certificate-btn {
-  display: inline-flex;
+.certificate-link {
+    display: inline-flex;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 8px;
+    gap: 8px;
 
-  margin-top: 18px;
+    margin-top: 20px;
 
-  padding: 9px 15px;
+    padding: 9px 15px;
 
-  border: 1px solid rgba(24, 210, 110, 0.5);
+    border: 1px solid #18d26e;
 
-  border-radius: 5px;
+    border-radius: 5px;
 
-  color: #18d26e;
+    color: #18d26e;
 
-  text-decoration: none;
+    background: transparent;
 
-  font-size: 13px;
+    text-decoration: none;
 
-  font-weight: 500;
+    font-size: 13px;
 
-  transition: all 0.3s ease;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
 }
 
-.certificate-btn:hover {
-  background: #18d26e;
+.certificate-link:hover {
+    background: #18d26e;
 
-  color: #fff;
+    color: #ffffff;
 
-  border-color: #18d26e;
+    transform: translateY(-1px);
 }
 
-.certificate-btn i {
-  font-size: 15px;
-}
-
-
-/*--------------------------------------------------------------
-# Download CV
---------------------------------------------------------------*/
-
-.resume-download {
-  text-align: center;
-
-  margin-top: 45px;
-}
-
-.download-cv {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  padding: 12px 25px;
-
-  border: 1px solid #18d26e;
-
-  border-radius: 5px;
-
-  color: #18d26e;
-
-  text-decoration: none;
-
-  font-size: 14px;
-
-  font-weight: 500;
-
-  transition: all 0.3s ease;
-}
-
-.download-cv:hover {
-  background: #18d26e;
-
-  color: #fff;
-}
-
-.download-cv i {
-  font-size: 16px;
+.certificate-link i {
+    font-size: 14px;
 }
 
 
-/*--------------------------------------------------------------
-# Responsive
---------------------------------------------------------------*/
+/* =========================================================
+   DOWNLOAD CV
+   ========================================================= */
 
-@media (max-width: 768px) {
+.resume-cv {
+    display: flex;
 
-  .resume {
-    padding: 60px 20px;
-  }
+    justify-content: center;
 
-  .resume-grid {
-    grid-template-columns: 1fr;
-  }
+    margin-top: 45px;
+}
 
-  .resume-card {
-    padding: 25px;
-  }
+.cv-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 12px 24px;
+
+    background: #18d26e;
+
+    border: 1px solid #18d26e;
+
+    border-radius: 5px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    background: transparent;
+
+    color: #18d26e;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .resume-container {
+        width: 90%;
+    }
+
+    .resume-grid {
+        grid-template-columns: 1fr;
+    }
 
 }
 
-@media (max-width: 480px) {
 
-  .resume-card {
-    flex-direction: column;
-    gap: 15px;
-  }
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-  .resume-icon {
-    min-width: 48px;
-    width: 48px;
-    height: 48px;
-  }
+@media (max-width: 600px) {
 
-  .resume .section-title h2 {
-    font-size: 28px;
-  }
+    .resume-section {
+        padding: 65px 0;
+    }
+
+    .resume-container {
+        width: 88%;
+    }
+
+    .resume-heading {
+        margin-bottom: 35px;
+    }
+
+    .resume-heading h2 {
+        font-size: 30px;
+    }
+
+    .resume-card {
+        padding: 24px;
+    }
+
+    .resume-card h3 {
+        font-size: 18px;
+    }
 
 }
