@@ -1,78 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Typing Animation
-    const typingElement = document.querySelector('.typing-animation');
-    const roles = ['Computer Engineer', 'Web Developer', 'AI/ML Enthusiast','Programmer'];
-    let currentRoleIndex = 0;
-    let currentCharIndex = 0;
-    let isDeleting = false;
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('main section[id]');
+    const revealItems = document.querySelectorAll('.reveal-item');
 
-    function typeText() {
-        const currentRole = roles[currentRoleIndex];
-        
-        if (!isDeleting && currentCharIndex <= currentRole.length) {
-            typingElement.textContent = currentRole.slice(0, currentCharIndex);
-            currentCharIndex++;
-        }
-        
-        if (isDeleting && currentCharIndex > 0) {
-            typingElement.textContent = currentRole.slice(0, currentCharIndex);
-            currentCharIndex--;
-        }
-        
-        if (!isDeleting && currentCharIndex === currentRole.length) {
-            setTimeout(() => {
-                isDeleting = true;
-            }, 2000);
-        }
-        
-        if (isDeleting && currentCharIndex === 0) {
-            isDeleting = false;
-            currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        }
-        
-        const speedTyping = isDeleting ? 50 : 100;
-        setTimeout(typeText, speedTyping);
-    }
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.innerHTML = `<i class="fas fa-${isOpen ? 'xmark' : 'bars'}" aria-hidden="true"></i>`;
+    });
 
-    typeText();
-
-    // Smooth Scrolling
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-
-            // Update active class
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
+    links.forEach((link) => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
         });
     });
 
-    // Scroll Reveal Animations
-    const sections = document.querySelectorAll('section');
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
+                links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
             }
         });
-    }, observerOptions);
+    }, { rootMargin: '-35% 0px -55% 0px' });
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    sections.forEach((section) => sectionObserver.observe(section));
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
 });
